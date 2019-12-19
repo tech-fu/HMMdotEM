@@ -1,0 +1,23 @@
+----- Version 0.6.3 -----
+0. Bugs removed:
+- fastviterbi.c in win64 was not compiling.
+  This was a matlab/VSC++ problem with the name of the function "max".
+  All .c files now have names that reflect the file's name (e.g. "fv_max")
+  Also removed include of stdlib which was not needed for anything, and was
+  thought to have had something to do with the problem.
+ 
+1. Improvements in documentation. Clearer install procedures.
+
+----- Version 0.6.2 -----
+1. Improvements in documentation.
+
+----- Version 0.6.1 -----
+1. Changed occurrences of mxErrMsgTxt to mexErrMsgTxt for compatibility.
+
+----- Version 0.6.0 -----
+
+1. Made condloglikfun an abstract method of HMM.
+This might be seen as a decrease usability for some users,
+however they would have probably never used the vanilla version of the code with the 
+fminsearch m-step solver, so almost surely they will need to subclass.
+So for most users this is a usability win, since their code will be all in the same place. 
